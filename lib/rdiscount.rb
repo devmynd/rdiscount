@@ -68,10 +68,10 @@ class RDiscount
 
   # Do not process pseudo-protocols like <tt>[](id:name)</tt>
   attr_accessor :no_pseudo_protocols
-  
+
   # Disable superscript processing.
   attr_accessor :no_superscript
-  
+
   # Disable strikethrough processing.
   attr_accessor :no_strikethrough
 
@@ -97,6 +97,7 @@ class RDiscount
   # * <tt>:no_strikethrough</tt> - Disable strikethrough processing.
   #
   def initialize(text, *extensions)
+    @generate_toc = true
     @text  = text
     extensions.each { |e| send("#{e}=", true) }
   end
