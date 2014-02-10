@@ -97,8 +97,22 @@ class RDiscount
   # * <tt>:no_strikethrough</tt> - Disable strikethrough processing.
   #
   def initialize(text, *extensions)
-    @generate_toc = true
-    @text  = text
+    @smart = Config.smart
+    @filter_styles = Config.filter_styles
+    @filter_html = Config.filter_html
+    @fold_lines = Config.fold_lines
+    @footnotes = Config.footnotes
+    @generate_toc = Config.generate_toc
+    @no_image = Config.no_image
+    @no_links = Config.no_links
+    @no_tables = Config.no_tables
+    @strict = Config.strict
+    @autolink = Config.autolink
+    @safelink = Config.safelink
+    @no_pseudo_protocols = Config.no_pseudo_protocols
+    @no_superscript = Config.no_superscript
+    @no_strikethrough = Config.no_strikethrough
+    @text = text
     extensions.each { |e| send("#{e}=", true) }
   end
 
