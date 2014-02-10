@@ -23,6 +23,9 @@
 #     require 'bluecloth'
 #   end
 #
+
+require "rdiscount/config"
+
 class RDiscount
   VERSION = '2.1.7'
 
